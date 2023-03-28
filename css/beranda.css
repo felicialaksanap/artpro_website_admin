@@ -1,0 +1,78 @@
+html, body {
+    height: 95%;
+}
+
+#logthemelogin {
+    position: relative;
+    margin-top: -30px;
+    margin-left: 30px;
+}
+
+#logout {
+    text-decoration: none;
+    color: #FF4D00;
+    position: relative;
+}
+
+#title {
+    position: relative;
+    margin-left: 30px;
+}
+
+#titletext {
+    font-weight: bold;
+}
+
+#subtitletext {
+    font-weight: normal;
+}
+
+#menutemp {
+    position: relative;
+    margin-top: 50px;
+}
+
+#square-left {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    background: #246A73;
+    padding-top: 25px;
+    margin-left: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#square-center {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    background: #246A73;
+    padding-top: 50px;
+    margin-left: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#square-right {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    background: #FF4D00;
+    padding-top: 25px;
+    margin-left: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#footer {
+    background: #246A73;
+    color: white;
+    text-align: center;
+}
