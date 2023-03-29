@@ -1,0 +1,26 @@
+#logthemelogin {
+    position: relative;
+    margin-top: -30px;
+    margin-left: 30px;
+}
+
+#back {
+    text-decoration: none;
+    color: #FF4D00;
+    position: relative;
+}
+
+#titletemp {
+    position: relative;
+    margin-top: -40px;
+}
+
+#titledata {
+    text-align: center;
+    font-weight: bold;
+}
+
+#datatabletemp {
+    position: relative;
+    margin-top: 10px;
+}
