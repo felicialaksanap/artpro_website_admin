@@ -50,7 +50,7 @@
                         <th>Foto KTP</th>
                         <th>Foto Selfie dengan KTP</th>
                         <th>Status</th>
-                        <th>action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +59,48 @@
             </table>
         </div>
     </div>
+
+    <div class="modal" id="modalktp">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h4 class="modal-title">Status Verifikasi Data</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <div class="modal-body">
+                <label for="status" class="form-label">Status:</label>
+                <input type="status" class="form-control" id="status" placeholder="Validasi / Belum validasi" name="status">
+                <label for="alasan" class="form-label">Alasan:</label>
+                <input type="alasan" class="form-control" id="alasan" placeholder="Alasan ..." name="alasan">
+            </div>
+      
+            <div class="modal-footer">
+              <button type="button" id="btnkirim" class="btn btn-success">Kirim</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modalfotoktp">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body" id="img_data">
+
+            </div>
+      
+          </div>
+        </div>
+      </div>
 
     <!-- SCIRPT PART -->
     <!-- Option 1: Bootstrap Bundle with Popper -->

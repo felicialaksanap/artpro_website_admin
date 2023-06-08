@@ -37,15 +37,28 @@ html, body {
     width: 150px;
     border-radius: 20px;
     background: #246A73;
-    padding-top: 25px;
+    padding-top: 35px;
     margin-left: 50px;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
 }
 
-#square-center {
+#square-midleft {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    background: #246A73;
+    padding-top: 40px;
+    margin-left: 50px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#square-midright {
     height: 150px;
     width: 150px;
     border-radius: 20px;
@@ -54,7 +67,7 @@ html, body {
     margin-left: 50px;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
 }
 
@@ -63,11 +76,11 @@ html, body {
     width: 150px;
     border-radius: 20px;
     background: #FF4D00;
-    padding-top: 25px;
+    padding-top: 40px;
     margin-left: 50px;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
 }
 

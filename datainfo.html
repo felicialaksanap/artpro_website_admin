@@ -10,11 +10,9 @@
 
     <!-- css datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    
+
     <!-- Main Stylesheet -->
     <link href="css/datapage.css" rel="stylesheet">
-
-
 </head>
 <body>
     <div class="container-fluid">
@@ -30,24 +28,24 @@
         <div class="row" id="titletemp">
             <div class="col-4"></div>
             <div class="col-4">
-                <h2 id="titledata">Daftar Berita & Tips</h2>
+                <h2 id="titledata">Info Pelatihan</h2>
             </div>
             <div class="col-4"></div>
         </div>
         <div class="row" id="buttonadd">
             <div class="col-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalberita">+ add</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalinfo">+ add</button>
             </div>
             <div class="col-9"></div>
         </div>
         <div class="row" id="datatabletemp">
-            <table id="tableBerita" class="table table-striped table-responsiv" style="width: 100%;">
+            <table id="tableInfo" class="table table-striped table-responsiv" style="width: 100%;">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Judul</th>
                         <th>Isi</th>
-                        <th>URL</th>
+                        <th>URl</th>
                         <th>Tanggal Posting</th>
                         <th>Gambar</th>
                         <th>Action</th>
@@ -56,20 +54,20 @@
             </table>
         </div>
 
-        <div class="modal" id="modalberita">
+        <div class="modal" id="modalinfo">
             <div class="modal-dialog">
               <div class="modal-content">
           
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Tambah Berita&Tips</h4>
+                  <h4 class="modal-title">Tambah Info Pelatihan</h4>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
           
                 <!-- Modal body -->
                 <div class="modal-body">
                     <label for="judul" class="form-label">Judul:</label>
-                    <input type="judul" class="form-control" id="judul" placeholder="judul berita" name="judul">
+                    <input type="judul" class="form-control" id="judul" placeholder="Judul" name="judul">
                     <br>
                     <label for="alasan" class="form-label">Isi:</label>
                     <textarea class="form-control" rows="5" id="isi" name="isi" placeholder="informasi"></textarea>
@@ -85,9 +83,10 @@
           
               </div>
             </div>
+          </div>
         </div>
 
-        <div class="modal" id="modalberitagambar">
+        <div class="modal" id="modalinfogambar">
             <div class="modal-dialog">
               <div class="modal-content">
     
@@ -117,6 +116,6 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
     <!-- Table Script -->
-    <script src="./scripts/databerita.js"></script>
+    <script src="./scripts/datainfo.js"></script>
 </body>
 </html>

@@ -23,65 +23,86 @@ $(document).ready(function(){
                 render: function(data){
                 return data.rt +" / "+data.rw
             }},
-            {data: 'fotoktp'},
-            {data: 'selfiektp'},
+            {data: 'iduser',
+            render: function(data,type,row,meta){
+                return `
+                <button type="button" id="fotoktp" class="btn" style="background-color: transparent">
+                    <img src="http://127.0.0.1:1234/getimage?id=${data}&folder=fotoktp" class="rounded" alt="fotoktp" width="100px" height="100px">
+                </button>
+                `
+            }},
+            {data: 'iduser',
+            render: function(data,type,row,meta){
+                return `
+                <button type="button" id="selfiektp" class="btn" style="background-color: transparent">
+                    <img src="http://127.0.0.1:1234/getimage?id=${data}&folder=selfiektp" class="rounded" alt="selfiektp" width="100px" height="100px">
+                </button>
+                `
+            }
+            },
             {data: 'statusverifikasi'},
             {
                 render: function(data,type,row,meta){
                     return `
-                    <button class="btn btn-danger btn-fab btn-icon btn-round btn-sm edit" id='edit' type="button">edit</button>
+                    <button class="btn btn-info btn-fab btn-icon btn-round btn-sm edit" id='edit' type="button" data-bs-toggle="modal" data-bs-target="#modalktp">edit</button>
                     `
                 }
             }
         ]
     });
-    
+    var id
     $('#tableVerifikasi tbody').on( 'click', '#edit', function () {
-        console.log(table.row($(this).parents('tr')).data().iduser);
+        id = (table.row($(this).parents('tr')).data().iduser);
          
     } );
-    // $.ajax({
-    //     url: 'http://127.0.0.1:1234/alldataverifikasi',
-    //     dataType: 'json',
-    //     success: function(dataset) {
-    //         var data = []
-    //         var n = 1
-    //         for(let i of dataset){
-    //             data = []
-    //             data.push(n);
-    //             data.push(i['nik'])
-    //             data.push(i['tempatlahir'])
-    //             data.push(i['tanggallahir'])
-    //             data.push(i['alamat'])
-    //             data.push(i['kecamatan'])
-          
-    //             // if(i['status'] == false){
-    //             //   data.push("Waiting List")
-    //             // }
-    //             // else{
-    //             //   data.push("On Board")
-          
-    //             // }
-    //             // data.push(i['platno'])
-    //             n += 1
-    //             table.row.add(data)
-    //           }
-    //     },
-    //     error: function(xhr, status, error) {
-    //         // Handle error
-    //         try {
-    //             console.log(xhr.responseText);
-    //         } catch (e) {
-    //             console.log("An error occurred while handling the response: " + e);
-    //         }
-    //     },
-    //     complete: function() {
-    //         // Handle complete
-    //         table.draw()
-    //     }
-    // });
-    
+
+    $("#btnkirim").on("click", function () {
+        updateData(id)
+    })
+
+    $('#tableVerifikasi tbody').on( 'click', '#selfiektp', function () {
+        console.log("selfie ktp")
+        var id = table.row($(this).parents('tr')).data().iduser
+        $('#img_data').html("")
+        $('#img_data').append(`
+        <img src="http://127.0.0.1:1234/getimage?id=${id}&folder=selfiektp" class="rounded" alt="selfiektp" width="470px" height="400px">
+        `)
+        $('#modalfotoktp').modal("show")
+    } );
+
+    $('#tableVerifikasi tbody').on( 'click', '#fotoktp', function () {
+        console.log("foto ktp")
+        var id = table.row($(this).parents('tr')).data().iduser
+        $('#img_data').html("")
+        $('#img_data').append(`
+        <img src="http://127.0.0.1:1234/getimage?id=${id}&folder=fotoktp" class="rounded" alt="selfiektp" width="470px" height="400px">
+        `)
+        $('#modalfotoktp').modal("show")
+    } );
+
     $(window).resize(function(){
         table.draw();
     });
 })
+
+function updateData(id) {
+    console.log($("#status").val())
+    console.log($("#alasan").val())
+    $.ajax({
+        url: "http://127.0.0.1:1234/editdataverifikasi",
+        method: "PUT",
+        data: { 
+            statusverifikasi : $("#status").val(),
+            alasan : $("#alasan").val() ,
+            iduser : id,
+        },
+        success: function() {
+            console.log("Masuk")
+            $("#table").DataTable().ajax.reload()
+        },
+        error: function() {
+            console.log("Gagal")
+        }
+        
+      });
+}
