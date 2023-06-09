@@ -41,6 +41,7 @@ $(document).ready(function(){
             }
             },
             {data: 'statusverifikasi'},
+            {data: 'alasan'}, 
             {
                 render: function(data,type,row,meta){
                     return `
