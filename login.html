@@ -42,6 +42,7 @@
                     <div class="col-6">
                         <div class="d-grid">
                             <a href="beranda.html" class="btn">Masuk</a>
+                            <!-- <button onclick="login()" class="btn">login</button> -->
                         </div>
                     </div>
                     <div class="col-3"></div>
@@ -50,5 +51,33 @@
         </div>
        </div>
     </div>
+
+    <!-- SCIRPT PART -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+   
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        function login() {
+            $.ajax({
+                url: "http://127.0.0.1:1234/akunuserweb",
+                method: "POST",
+                data: {
+                    "email": $("#username").val(),
+                    "password": $("#password").val()
+                },
+                success: function() {
+                    window.location
+                },
+                error: function() {
+                    console.log("tidak masuk")
+                }
+                
+            })
+
+        }
+        $(document).ready(function() {
+        
+        })
+    </script>
 </body>
 </html>
